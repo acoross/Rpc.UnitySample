@@ -1,0 +1,41 @@
+{
+  "namespace": "Acoross.TestRpc.Nested",
+  "dependencies": [],
+  "enums": {
+    "ChatType": [
+      "Private",
+      "World",
+      "Local"
+    ]
+  },
+  "types": {
+    "LoginReq": {
+      "id": "string",
+      "pwd": "string"
+    },
+    "ChatMsg": {
+      "talker": "string",
+      "msg": "string",
+      "type": "ChatType"
+    },
+    "Character": {},
+    "ComplexType": {
+      "id": "int",
+      "chatmsg": "ChatMsg",
+      "my_characters": "list<Character>"
+    }
+  },
+  "rpc": {
+    "Login": {
+      "req": "LoginReq",
+      "res": "bool"
+    },
+    "Chat": {
+      "req": "ChatMsg",
+      "res": "bool"
+    }
+  },
+  "noti": {
+    "NotiChat": "ChatMsg"
+  }
+}
